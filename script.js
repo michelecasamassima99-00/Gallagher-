@@ -1,62 +1,34 @@
-const datiGallagher = {
-    'bambino': ["Il Bambino", "Storia: Le radici? Le mie sono marcite molto prima che io nascessi. Vengo da terre lontane da Aengard, posti dove il sole non sembra mai scaldare davvero. Mio padre... era un uomo con troppa onore e poca testa. È bastata una lettera firmata da un nobile in una terra remota per portarselo via. È andato a combattere una guerra che non era la sua, ed è tornato sotto forma di un pezzo di carta stropicciato che annunciava la sua morte. Mia madre? Il dolore l'ha trasformata in un guscio vuoto. Mi ha guardato e ha visto solo il fantasma di un uomo morto. Mi ha lasciato al mio destino, Mi ha scaricato sulla strada come si fa con i rifiuti.»", "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446389/giovane_fw2eih.png"],
-    'ragazzo': ["Il Ragazzo", "Storia: Ho imparato a camminare tra i lupi. Se vuoi sopravvivere alla fame, impari a non sorridere mai. La gente diceva che ero freddo, distaccato... io lo chiamavo non voler morire. Mi sono addestrato finché le mani non hanno smesso di sanguinare. e sono diventato una Lama d'Argento mercenari dell ovest.»", "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446404/ragazzo_faq665.png"],
-    'mercenario': ["Il Mercenario", "Storia: Credevo che servire le casate nobili ci desse una dignità. Mi sbagliavo. Eravamo solo cani da guardia con lo stemma lucido. A trent'anni, il mondo mi ha ricordato chi ero davvero. Un'imboscata di quelle sporche. Eravamo circondati, il metallo strideva ovunque. Ho guardato i miei compagni, quelli con cui avevo giurato di morire... e ho visto solo le loro schiene mentre scappavano. Mi hanno venduto per cinque minuti di vita in più. Mi hanno lasciato lì a farmi catturare come un animale. Ma non sapevano che un animale messo all'angolo morde più forte. Sono scappato usando la loro stessa sporca furbizia e ho voltato le spalle a quel passato. Ho tenuto il nome delle Lame d'Argento solo per sputarci sopra ogni volta che lo sento.", "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446391/mercenario_i3kbnk.png"],
-    'anziano': ["L'Anziano", `La Ragazza e il Simbolo...`, "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446387/anziano_bbjqne.png"],
-    'tatuaggio': ["Segni e Tatuaggi", `Porta un tatuaggio sulla spalla destra...`, "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446411/tatuaggio_vspdxd.jpg"],
-    'aspetto': ["Aspetto Fisico", `Corporatura: ...`, "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446404/ricordo_znoads.png"],
-    'carattere': ["Il Carattere", `L’Uomo del "Vero e Falso": ...`, "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446404/ricordo2_ysvgil.png"]
-};
+@font-face { font-family: 'Girassol'; src: url('img/Girassol-Regular.ttf'); }
+Body { background-color: #1a1a1a; background-image: url('https://res.cloudinary.com/dqoncufhc/image/upload/v1768446404/sfondo_jngbrg.jpg'); background-size: cover; background-attachment: fixed; color: #C0C0C0; font-family: 'Girassol', serif; text-align: center; margin: 0; padding: 10px; }
+.header-box { position: relative; width: 100%; max-width: 450px; height: 140px; margin: 10px auto; display: flex; align-items: center; justify-content: center; }
+.header-cornice { position: absolute; width: 100%; top: -164px; left: 50%; transform: translateX(-50%); height: auto; object-fit: contain; z-index: 1; pointer-events: none; }
+h1 { font-size: 19px; z-index: 2; width: 60%; margin-top: 80px; margin-left: 5px; line-height: 1.2; pointer-events: none; }
+.sezione-personaggi { display: flex; justify-content: center; margin: 10px auto 30px; width: fit-content; background-image: url('https://res.cloudinary.com/dqoncufhc/image/upload/v1768446390/cornice2_tfslbi.png'); background-size: 100% 100%; background-repeat: no-repeat; padding: 16px; border: none; border-radius: 15px; overflow: hidden; }
+.ritratto-box { width: 80px; height: 120px; border-right: 1px solid #b8b8b8; cursor: pointer; background-size: cover; background-position: center; }
+.ritratto-box:last-child { border-right: none; }
+.area-targhette { display: flex; justify-content: center; gap: 6px; width: 350px; margin: 0 auto; z-index: 10; position: relative; top: -20px; }
+.targhetta-vetrata { width: 76px; height: 42px; background: #e4d5b7; background-image: radial-gradient(circle, #f2e8d5 0%, #c5a880 100%); color: #2b1d0e; font-family: 'Girassol', serif; font-size: 11px; font-weight: bold; text-align: center; text-transform: uppercase; border: 3px solid #1a1a1a; outline: none; clip-path: polygon(15% 0, 85% 0, 100% 25%, 100% 75%, 85% 100%, 15% 100%, 0 75%, 0 25%); box-shadow: 0 4px 8px rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; cursor: default; user-select: none; flex-shrink: 0; }
+.mensola { display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 20px; position: relative; }
+.contenitore-bottiglie { display: flex; justify-content: center; gap: 20px; z-index: 2; transform: translateY(70px); }
+.bottone-bottiglia { background: none; border: none; cursor: pointer; }
+.bottiglia { height: 110px; width: auto; display: block; }
+.tavolo-base { width: 400px; height: auto; z-index: 1; }
+.modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
 
-function apri(chiave) {
-    var d = datiGallagher[chiave];
-    if (!d) return;
-
-    var titolo = d[0];
-    var testo = d[1];
-    var immagine = d[2];
-
-    document.getElementById('titolo-storia').innerText = titolo;
-    document.getElementById('testo-storia').innerText = testo;
-    var f = document.getElementById('img-modale');
-    if(immagine) { f.src = immagine; f.style.display = "block"; } else { f.style.display = "none"; }
-    
-    var tris = document.getElementById('contenitore-tris');
-    var controllo = document.getElementById('controllo-tris');
-    
-    if(titolo === 'Il Bambino') {
-        tris.style.display = "flex"; controllo.style.display = "none";
-        tris.innerHTML = `
-            <img src="https://res.cloudinary.com/dqoncufhc/image/upload/v1768446390/madre_pz7exh.jpg" class="foto-tris" style="width:90px; height:130px; object-fit:cover; margin: 0 2px;">
-            <img src="https://res.cloudinary.com/dqoncufhc/image/upload/v1768446386/bambino_vgddck.jpg" class="foto-tris" style="width:90px; height:130px; object-fit:cover; margin: 0 2px;">
-            <img src="https://res.cloudinary.com/dqoncufhc/image/upload/v1768446403/padre_ebpoxy.jpg" class="foto-tris" style="width:90px; height:130px; object-fit:cover; margin: 0 2px;">`;
-    } 
-    else if(titolo === "L'Anziano") {
-        tris.style.display = "flex"; controllo.style.display = "none";
-        tris.innerHTML = `
-            <img src="https://res.cloudinary.com/dqoncufhc/image/upload/v1768446391/incontro_zqbxpq.jpg" class="foto-tris" style="width:140px; height:180px; object-fit:cover; margin-right: 5px;">
-            <img src="https://res.cloudinary.com/dqoncufhc/image/upload/v1768446390/candela_ahabqh.gif" class="foto-tris" style="width:140px; height:180px; object-fit:cover; margin-left: 5px;">`;
-    }
-    else if(titolo === "Il Ragazzo" || titolo === "Il Mercenario") {
-        tris.style.display = "flex"; controllo.style.display = "none";
-        var fotoSrc = (titolo === "Il Ragazzo") ? "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446403/orfano_yd4ved.png" : "https://res.cloudinary.com/dqoncufhc/image/upload/v1768446413/soldato_qfetgq.png";
-        tris.innerHTML = `<img src="${fotoSrc}" class="foto-tris" style="width:200px; height:auto; margin-top: 10px;">`;
-    }
-    else { tris.style.display = "none"; controllo.style.display = "none"; }
-    
-    document.getElementById('miuModal').style.display = "block";
+.modal-content { 
+    background: #262626; margin: 15% auto; padding: 20px; border: 2px solid #b8b8b8; width: 85%; max-height: 70vh; overflow-y: auto; border-radius: 12px; 
+    text-align: center !important; 
 }
 
-function regolaTris(valore) { var foto = document.querySelectorAll('.foto-tris'); foto.forEach(img => { img.style.width = valore + "px"; }); }
-function chiudi() { document.getElementById('miuModal').style.display = "none"; }
-window.onclick = function(event) { if (event.target == document.getElementById('miuModal')) { chiudi(); } }
+#titolo-storia { 
+    text-align: center !important; 
+    display: block !important; 
+    width: 100% !important; 
+    margin: 0 auto 15px auto !important; 
+}
 
-const audioClick = new Audio('https://res.cloudinary.com/dqoncufhc/video/upload/v1768446386/click_vtol4d.wav');
-document.querySelectorAll('.ritratto-box').forEach(v => { 
-    v.addEventListener('click', () => { audioClick.currentTime = 0; audioClick.play(); }); 
-});
-
-const audioBottiglie = new Audio('https://res.cloudinary.com/dqoncufhc/video/upload/v1768446386/bottiglie_yxfq8d.wav');
-document.querySelectorAll('.bottone-bottiglia').forEach(b => { 
-    b.addEventListener('click', () => { audioBottiglie.currentTime = 0; audioBottiglie.play(); }); 
-});
+.img-storia { display: block; margin: 0 auto 15px; max-width: 150px; border-radius: 8px; }
+.close { float: right; font-size: 28px; cursor: pointer; }
+.foto-tris { width: 80px; height: auto; object-fit: cover; display: block; margin: 0 !important; padding: 0 !important; }
+#contenitore-audio-standard { position: fixed; z-index: 10001; top: 650px; left: 20%; background: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 50px; }
+#canzone-sottofondo { height: 30px; width: 200px; }
