@@ -20,7 +20,7 @@ Rin: «È una storia della mia gente, di prima che arrivassimo nell'Aengard. La 
 Gallagher: (Alzo appena lo sguardo, una scintilla di curiosità che vince sulla stanchezza) «Sembra interessante. Di cosa si tratta?»
 Rin: (Inizia a parlare con una voce bassa, quasi ipnotica) «Narra di un lupo e un'agnella. C'era una volta un uomo pallido, dai capelli corvini, che era molto solo. Tutti lo schivavano perché incontrarlo significava la fine. Così, per avere per sempre un amico, ha preso un'ascia e si è diviso in due. Proprio nel mezzo. Così avrebbe avuto per sempre un amico.»
 Gallagher: (Resto immobile, sentendo un brivido scorrermi lungo la schiena che non c'entra col freddo) «Un'ascia... sembra un'assurdità, eppure... c'è qualcosa di familiare in questo schifo.» (Sospiro).
-Rin: «Lo pensavo anche io. Poi ho capito. Rappresentano la morte. L'Agnella dona una fine serena ai valorosi. Il Lupo, invece... il Lupo sbrana i codardi. Quelli che passano la vita a fuggire da se stessi.»
+Rin: «Lo pensavo anche io. Poi ho capito. Rappresentano la morte. L'Agnella dona una fine serena ai valorosi. Il Lupo, invece... il Lupo sbrana i codardi. Quelli che passano la via a fuggire da se stessi.»
 Gallagher: (Stringo i pugni, pensando alle Lame d'Argento e al fango che ho mangiato per sopravvivere) «In effetti... quella storia rappresenta me. Sono io quell'uomo spaccato a metà, che cerca di non farsi mangiare dai suoi stessi pezzi.» (Pensa pensieroso).
 Rin: (Mi sorride, ed è l'unica cosa pulita che vedo da mesi) «Non ci pensare, Gallagher. Tutti abbiamo qualcosa per cui lottare, finché il cuore batte ancora.»
 Gallagher: (La guardo e, per un istante, la stanchezza sembra meno pesante) «Hai ragione... maledizione, hai ragione.» (La attiro a me, sentendomi goffo e stanco come un vecchio cane che ha trovato un po' di riparo) «Farà un freddo cane stanotte. Scaldati con me... non ho voglia di svegliarmi gelato e solo.» (Lo dico quasi a bassa voce, con un briciolo di imbarazzo).
@@ -91,3 +91,4 @@ document.querySelectorAll('.ritratto-box').forEach(v => {
 const audioBottiglie = new Audio('https://res.cloudinary.com/dqoncufhc/video/upload/v1768446386/bottiglie_yxfq8d.wav');
 document.querySelectorAll('.bottone-bottiglia').forEach(b => { 
     b.addEventListener('click', () => { audioBottiglie.currentTime = 0; audioBottiglie.play(); });
+});
