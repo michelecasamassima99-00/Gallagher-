@@ -17,7 +17,7 @@ h1 { font-size: 19px; z-index: 2; width: 60%; margin-top: 80px; margin-left: 5px
 
 .modal-content { 
     background: #262626; margin: 15% auto; padding: 20px; border: 2px solid #b8b8b8; width: 85%; max-height: 70vh; overflow-y: auto; border-radius: 12px; 
-    text-align: center !important; /* Forza la centratura dei contenuti */
+    text-align: center !important; 
 }
 
 #titolo-storia { 
